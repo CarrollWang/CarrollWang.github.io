@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://carrollwang.github.io/</id>
     <title>我爱你啊</title>
-    <updated>2019-10-07T09:18:45.686Z</updated>
+    <updated>2019-10-07T09:20:19.710Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://carrollwang.github.io/"/>
     <link rel="self" href="https://carrollwang.github.io//atom.xml"/>
@@ -11,25 +11,24 @@
     <icon>https://carrollwang.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, 我爱你啊</rights>
     <entry>
-        <title type="html"><![CDATA[常用的DOS命令]]></title>
+        <title type="html"><![CDATA[常用的DOS命令]]></title>
         <id>https://carrollwang.github.io//post/wu-wu-wo</id>
         <link href="https://carrollwang.github.io//post/wu-wu-wo">
         </link>
         <updated>2019-10-05T05:49:35.000Z</updated>
-        <content type="html"><![CDATA[<p>常用的DOS命令<br>
-dir : 列出当前目录下的文件以及文件夹<br>
-md : 创建目录<br>
-rd : 删除目录<br>
-cd : 进入指定目录<br>
-cd.. : 退回到上一级目录<br>
-cd: 退回到根目录<br>
-del : 删除文件<br>
-exit : 退出 dos 命令行<br>
- 补充：echo javase&gt;1.doc<br>
- 常用快捷键<br>
- ← →：移动光标<br>
- ↑ ↓：调阅历史操作命令<br>
- Delete和Backspace：删除字符</p>
+        <content type="html"><![CDATA[<p>dir : 列出当前目录下的文件以及文件夹<br>
+md : 创建目录<br>
+rd : 删除目录<br>
+cd : 进入指定目录<br>
+cd.. : 退回到上一级目录<br>
+cd: 退回到根目录<br>
+del : 删除文件<br>
+exit : 退出 dos 命令行<br>
+补充：echo javase&gt;1.doc<br>
+常用快捷键<br>
+← →：移动光标<br>
+↑ ↓：调阅历史操作命令<br>
+Delete和Backspace：删除字符</p>
 ]]></content>
     </entry>
     <entry>
