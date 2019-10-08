@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://carrollwang.github.io/</id>
     <title>我爱你啊</title>
-    <updated>2019-10-08T07:15:57.229Z</updated>
+    <updated>2019-10-08T07:20:31.597Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://carrollwang.github.io/"/>
     <link rel="self" href="https://carrollwang.github.io//atom.xml"/>
@@ -27,7 +27,8 @@
 请从键盘输入岳小鹏的期末成绩，并加以判断<br>
 <strong>答案：</strong></p>
 </blockquote>
-<pre><code class="language-public">    public static void main(String[] args) {
+<pre><code class="language-java">public class DoWhileTest {
+    public static void main(String[] args) {
         //遍历100以内的偶数,并计算所有偶数的和及偶数的个数
         int num = 1;
         int sum = 0;
@@ -43,7 +44,7 @@
         System.out.println(&quot;总和为：&quot; + sum);
         System.out.println(&quot;个数为：&quot; + count);
     }
-}
+}  ```
 
 **if语句例题2**
 编写程序：由键盘输入三个整数分别存入变量num1、num2、num3，
