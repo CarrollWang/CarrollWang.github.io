@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://carrollwang.github.io/</id>
     <title>我爱你啊</title>
-    <updated>2019-10-08T07:13:34.212Z</updated>
+    <updated>2019-10-08T07:15:57.229Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://carrollwang.github.io/"/>
     <link rel="self" href="https://carrollwang.github.io//atom.xml"/>
@@ -43,7 +43,17 @@
         System.out.println(&quot;总和为：&quot; + sum);
         System.out.println(&quot;个数为：&quot; + count);
     }
-}</code></pre>
+}
+
+**if语句例题2**
+编写程序：由键盘输入三个整数分别存入变量num1、num2、num3，
+对它们进行排序(使用 if-else if-else),并且从小到大输出。
+
+
+
+
+
+</code></pre>
 ]]></content>
     </entry>
     <entry>
