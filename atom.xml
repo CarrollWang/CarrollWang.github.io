@@ -1,19 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://carrollwang.github.io/</id>
+    <id>http://localhost:4000</id>
     <title>我爱你啊</title>
-    <updated>2019-10-08T05:46:22.506Z</updated>
+    <updated>2019-10-08T07:11:08.193Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://carrollwang.github.io/"/>
-    <link rel="self" href="https://carrollwang.github.io//atom.xml"/>
+    <link rel="alternate" href="http://localhost:4000"/>
+    <link rel="self" href="http://localhost:4000/atom.xml"/>
     <subtitle>一生所求，爱与自由.</subtitle>
-    <logo>https://carrollwang.github.io//images/avatar.png</logo>
-    <icon>https://carrollwang.github.io//favicon.ico</icon>
+    <logo>http://localhost:4000/images/avatar.png</logo>
+    <icon>http://localhost:4000/favicon.ico</icon>
     <rights>All rights reserved 2019, 我爱你啊</rights>
     <entry>
+        <title type="html"><![CDATA[Java基础习题集]]></title>
+        <id>http://localhost:4000/post/java-ji-chu-xi-ti-ji</id>
+        <link href="http://localhost:4000/post/java-ji-chu-xi-ti-ji">
+        </link>
+        <updated>2019-10-08T07:06:54.000Z</updated>
+        <content type="html"><![CDATA[<p>#<strong>1.if语句例题1</strong></p>
+<blockquote>
+<p>岳小鹏参加Java考试，他和父亲岳不群达成承诺：<br>
+如果：<br>
+成绩为100分时，奖励一辆BMW；<br>
+成绩为(80，99]时，奖励一台iphone xs max；<br>
+当成绩为[60,80]时，奖励一个 iPad；<br>
+其它时，什么奖励也没有。<br>
+请从键盘输入岳小鹏的期末成绩，并加以判断</p>
+</blockquote>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Java基础笔记]]></title>
-        <id>https://carrollwang.github.io//post/java-ji-chu-bi-ji</id>
-        <link href="https://carrollwang.github.io//post/java-ji-chu-bi-ji">
+        <id>http://localhost:4000/post/java-ji-chu-bi-ji</id>
+        <link href="http://localhost:4000/post/java-ji-chu-bi-ji">
         </link>
         <updated>2019-10-08T05:45:34.000Z</updated>
         <content type="html"><![CDATA[<ol>
@@ -21,22 +39,25 @@
 </ol>
 <p>JDK = JRE + Java的开发工具（javac.exe,java.exe,javadoc.exe）<br>
 JRD = JVM + Java核心类库</p>
-<p>#2.为什么要配置path环境变量？如何配置？</p>
+<p>2.为什么要配置path环境变量？如何配置？</p>
 <p>JAVA_HOME = bin的上一层目录<br>
 path = %JAVA_HOME%\bin</p>
-<p>#3.常用的几个命令行操作都有哪些？(至少4个)<br>
+<p>3.常用的几个命令行操作都有哪些？(至少4个)<br>
 cd<br>
 md<br>
 rd<br>
 del<br>
 cd..<br>
 cd/</p>
+<p>4.为什么配置path环境变量？<br>
+path环境变量：windows操作系统执行命令时所要搜寻的路径<br>
+为什么要配置path:希望java的开发工具（javac.exe,java.exe)在任何的文件路径下都可以执行成功。</p>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[常用的DOS命令]]></title>
-        <id>https://carrollwang.github.io//post/wu-wu-wo</id>
-        <link href="https://carrollwang.github.io//post/wu-wu-wo">
+        <id>http://localhost:4000/post/wu-wu-wo</id>
+        <link href="http://localhost:4000/post/wu-wu-wo">
         </link>
         <updated>2019-10-05T05:49:35.000Z</updated>
         <content type="html"><![CDATA[<p>dir : 列出当前目录下的文件以及文件夹<br>
@@ -56,8 +77,8 @@ Delete和Backspace：删除字符</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[参数]]></title>
-        <id>https://carrollwang.github.io//post/can-shu</id>
-        <link href="https://carrollwang.github.io//post/can-shu">
+        <id>http://localhost:4000/post/can-shu</id>
+        <link href="http://localhost:4000/post/can-shu">
         </link>
         <updated>2019-10-05T05:45:31.000Z</updated>
         <content type="html"><![CDATA[<!-- more -->
@@ -68,8 +89,8 @@ Delete和Backspace：删除字符</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello World!]]></title>
-        <id>https://carrollwang.github.io//post/hello-gridea</id>
-        <link href="https://carrollwang.github.io//post/hello-gridea">
+        <id>http://localhost:4000/post/hello-gridea</id>
+        <link href="http://localhost:4000/post/hello-gridea">
         </link>
         <updated>2019-09-04T16:00:00.000Z</updated>
         <content type="html"><![CDATA[<p>Hello World!</p>
