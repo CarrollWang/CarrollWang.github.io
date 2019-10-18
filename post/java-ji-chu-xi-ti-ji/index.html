@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://carrollwang.github.io//favicon.ico?v=1570542740060">
+<link rel="shortcut icon" href="https://carrollwang.github.io//favicon.ico?v=1571385115217">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://carrollwang.github.io//styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://carrollwang.github.io/">
-        <img src="https://carrollwang.github.io//images/avatar.png?v=1570542740060" class="site-logo">
+        <img src="https://carrollwang.github.io//images/avatar.png?v=1571385115217" class="site-logo">
         <h1 class="site-title">我爱你啊</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -135,6 +135,48 @@
 <p><strong>if语句例题2</strong><br>
 编写程序：由键盘输入三个整数分别存入变量num1、num2、num3，<br>
 对它们进行排序(使用 if-else if-else),并且从小到大输出。</p>
+<p><strong>二维数组练习题</strong></p>
+<blockquote>
+<p>使用二维数组打印一个10行 杨辉三角。<br>
+【提示】</p>
+</blockquote>
+<ul>
+<li>1.第一行有1个元素，第n行有n个元素</li>
+<li>2.每一行的第一个元素和最后一个元素都是1</li>
+<li>3.从第三行开始，对于非第一个元素和最后一个元素的元素。即：</li>
+<li>yanghui[i][j] =yanghui[i-1][j-1] + yanghui[i-1][j];</li>
+</ul>
+<pre><code class="language-java"> public static void main(String[] args) {
+        //1.声明并初始化二维数组（动态初始化）
+        int[][] yanghui = new int[10][];
+        //2.给数组的元素赋值
+        for (int i = 0; i &lt; yanghui.length; i++) {
+            yanghui[i] = new int[i + 1];
+            //2.1给首末元素赋值
+            yanghui[i][0] = yanghui[i][i] = 1;
+            //2.2给每行的非首末元素赋值
+            if (i &gt; 1) {
+                for (int j = 1; j &lt; yanghui[i].length - 1; j++) {
+                    yanghui[i][j] = yanghui[i - 1][j - 1] + yanghui[i - 1][j];
+                }
+            }
+
+        }
+        //3.遍历二维数组
+        for (int i = 0; i &lt; yanghui.length; i++) {
+            for (int j = 0; j &lt; yanghui[i].length; j++) {
+                System.out.print(yanghui[i][j] + &quot; &quot;);
+            }
+            System.out.println();
+        }
+    }
+ 
+
+
+
+
+
+</code></pre>
 
             </div>
             

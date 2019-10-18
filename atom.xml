@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://carrollwang.github.io/</id>
     <title>我爱你啊</title>
-    <updated>2019-10-08T13:52:21.600Z</updated>
+    <updated>2019-10-18T07:51:59.355Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://carrollwang.github.io/"/>
     <link rel="self" href="https://carrollwang.github.io//atom.xml"/>
@@ -49,6 +49,48 @@
 <p><strong>if语句例题2</strong><br>
 编写程序：由键盘输入三个整数分别存入变量num1、num2、num3，<br>
 对它们进行排序(使用 if-else if-else),并且从小到大输出。</p>
+<p><strong>二维数组练习题</strong></p>
+<blockquote>
+<p>使用二维数组打印一个10行 杨辉三角。<br>
+【提示】</p>
+</blockquote>
+<ul>
+<li>1.第一行有1个元素，第n行有n个元素</li>
+<li>2.每一行的第一个元素和最后一个元素都是1</li>
+<li>3.从第三行开始，对于非第一个元素和最后一个元素的元素。即：</li>
+<li>yanghui[i][j] =yanghui[i-1][j-1] + yanghui[i-1][j];</li>
+</ul>
+<pre><code class="language-java"> public static void main(String[] args) {
+        //1.声明并初始化二维数组（动态初始化）
+        int[][] yanghui = new int[10][];
+        //2.给数组的元素赋值
+        for (int i = 0; i &lt; yanghui.length; i++) {
+            yanghui[i] = new int[i + 1];
+            //2.1给首末元素赋值
+            yanghui[i][0] = yanghui[i][i] = 1;
+            //2.2给每行的非首末元素赋值
+            if (i &gt; 1) {
+                for (int j = 1; j &lt; yanghui[i].length - 1; j++) {
+                    yanghui[i][j] = yanghui[i - 1][j - 1] + yanghui[i - 1][j];
+                }
+            }
+
+        }
+        //3.遍历二维数组
+        for (int i = 0; i &lt; yanghui.length; i++) {
+            for (int j = 0; j &lt; yanghui[i].length; j++) {
+                System.out.print(yanghui[i][j] + &quot; &quot;);
+            }
+            System.out.println();
+        }
+    }
+ 
+
+
+
+
+
+</code></pre>
 ]]></content>
     </entry>
     <entry>
@@ -75,10 +117,12 @@ cd/</p>
 <p>4.为什么配置path环境变量？<br>
 path环境变量：windows操作系统执行命令时所要搜寻的路径<br>
 为什么要配置path:希望java的开发工具（javac.exe,java.exe)在任何的文件路径下都可以执行成功。</p>
-<p>5.=与==的区别<br>
-=是赋值，<mark>是判断<br>
+<p>5.=与==的区别</p>
+<blockquote>
+<p>=是赋值，= =是判断<br>
 如a=b 就是把b的值赋予给a;<br>
-a</mark>b 就是判断a等于b</p>
+a==b 就是判断a等于b</p>
+</blockquote>
 ]]></content>
     </entry>
     <entry>
