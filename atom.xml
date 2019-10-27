@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://carrollwang.github.io/</id>
     <title>我爱你啊</title>
-    <updated>2019-10-27T02:18:45.064Z</updated>
+    <updated>2019-10-27T05:57:45.799Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://carrollwang.github.io/"/>
     <link rel="self" href="https://carrollwang.github.io//atom.xml"/>
@@ -10,6 +10,27 @@
     <logo>https://carrollwang.github.io//images/avatar.png</logo>
     <icon>https://carrollwang.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, 我爱你啊</rights>
+    <entry>
+        <title type="html"><![CDATA[04讲复杂度分析（下）：浅析最好、最坏、平均、均摊时间复杂度]]></title>
+        <id>https://carrollwang.github.io//post/04-jiang-fu-za-du-fen-xi-xia-qian-xi-zui-hao-zui-pi-ping-jun-jun-tan-shi-jian-fu-za-du</id>
+        <link href="https://carrollwang.github.io//post/04-jiang-fu-za-du-fen-xi-xia-qian-xi-zui-hao-zui-pi-ping-jun-jun-tan-shi-jian-fu-za-du">
+        </link>
+        <updated>2019-10-27T05:56:58.000Z</updated>
+        <content type="html"><![CDATA[<p>一、复杂度分析的4个概念<br>
+1.最坏情况时间复杂度：代码在最理想情况下执行的时间复杂度。<br>
+2.最好情况时间复杂度：代码在最坏情况下执行的时间复杂度。<br>
+3.平均时间复杂度：用代码在所有情况下执行的次数的加权平均值表示。<br>
+4.均摊时间复杂度：在代码执行的所有复杂度情况中绝大部分是低级别的复杂度，个别情况是高级别复杂度且发生具有时序关系时，可以将个别高级别复杂度均摊到低级别复杂度上。基本上均摊结果就等于低级别复杂度。</p>
+<p>二、为什么要引入这4个概念？<br>
+1.同一段代码在不同情况下时间复杂度会出现量级差异，为了更全面，更准确的描述代码的时间复杂度，所以引入这4个概念。<br>
+2.代码复杂度在不同情况下出现量级差别时才需要区别这四种复杂度。大多数情况下，是不需要区别分析它们的。</p>
+<p>三、如何分析平均、均摊时间复杂度？<br>
+1.平均时间复杂度<br>
+代码在不同情况下复杂度出现量级差别，则用代码所有可能情况下执行次数的加权平均值表示。<br>
+2.均摊时间复杂度<br>
+两个条件满足时使用：1）代码在绝大多数情况下是低级别复杂度，只有极少数情况是高级别复杂度；2）低级别和高级别复杂度出现具有时序规律。均摊结果一般都等于低级别复杂度。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[03讲复杂度分析（上）：如何分析、统计算法的执行效率和资源消耗]]></title>
         <id>https://carrollwang.github.io//post/shu-ju-jie-gou-yu-suan-fa</id>
