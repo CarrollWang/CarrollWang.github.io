@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>数据结构与算法 | 我爱你啊</title>
+<meta name="description" content="一生所求，爱与自由.">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://carrollwang.github.io//favicon.ico?v=1572138544134">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://carrollwang.github.io//styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://carrollwang.github.io/">
+        <img src="https://carrollwang.github.io//images/avatar.png?v=1572138544134" class="site-logo">
+        <h1 class="site-title">我爱你啊</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            分类
+          </a>
+        
+      
+        
+          <a href="https://carrollwang.github.io//post/qi-ji-yin-qiao/" class="site-nav">
+            奇技淫巧
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      一生所求，爱与自由.
+    </div>
+    <div class="site-footer">
+       | <a class="rss" href="https://carrollwang.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">数据结构与算法</h2>
+            <div class="post-date">2019-10-27</div>
+            
+            <div class="post-content">
+              <p>一.为什么需要复杂度分析？</p>
+<blockquote>
+<p>①. 测试结果非常依赖测试环境<br>
+②测试结果受数据规模的影响很大</p>
+</blockquote>
+<p>二.大O复杂度表示法<br>
+所有代码的执行时间T(n)与每行代码的执行次数n成正比。<br>
+<img src="https://carrollwang.github.io//post-images/1572138199119.png" alt=""><br>
+大O时间复杂度实际上并不具体表示代码真正的执行时间，而是表示代码执行时间随数据规模增长的变化趋势，所以，也叫作渐进时间复杂度（asymptotic time complexity），简称时间复杂度。</p>
+<p>三.时间复杂度分析<br>
+1.只关注循环执行次数最多的一段代码</p>
+<p>我刚才说了，大O这种复杂度表示方法只是表示一种变化趋势。我们通常会忽略掉公式中的常量、低阶、系数，只需要记录一个最大阶的量级就可以了。所以，我们在分析一个算法、一段代码的时间复杂度的时候，也只关注循环执行次数最多的那一段代码就可以了。这段核心代码执行次数的n的量级，就是整段要分析代码的时间复杂度。</p>
+<pre><code class="language-java"> int cal(int n) {
+   int sum = 0;
+   int i = 1;
+   for (; i &lt;= n; ++i) {
+     sum = sum + i;
+   }
+   return sum;
+ }
+</code></pre>
+<p>其中第2、3行代码都是常量级的执行时间，与n的大小无关，所以对于复杂度并没有影响。循环执行次数最多的是第4、5行代码，所以这块代码要重点分析。前面我们也讲过，这两行代码被执行了n次，所以总的时间复杂度就是O(n)。</p>
+<p>2.加法法则：总复杂度等于量级最大的那段代码的复杂度</p>
+<pre><code class="language-java">int cal(int n) {
+   int sum_1 = 0;
+   int p = 1;
+   for (; p &lt; 100; ++p) {
+     sum_1 = sum_1 + p;
+   }
+
+   int sum_2 = 0;
+   int q = 1;
+   for (; q &lt; n; ++q) {
+     sum_2 = sum_2 + q;
+   }
+ 
+   int sum_3 = 0;
+   int i = 1;
+   int j = 1;
+   for (; i &lt;= n; ++i) {
+     j = 1; 
+     for (; j &lt;= n; ++j) {
+       sum_3 = sum_3 +  i * j;
+     }
+   }
+ 
+   return sum_1 + sum_2 + sum_3;
+ }
+</code></pre>
+<p>这个代码分为三部分，分别是求sum_1、sum_2、sum_3。我们可以分别分析每一部分的时间复杂度，然后把它们放到一块儿，再取一个量级最大的作为整段代码的复杂度。</p>
+<p>第一段的时间复杂度是多少呢？这段代码循环执行了100次，所以是一个常量的执行时间，跟n的规模无关。</p>
+<p>这里我要再强调一下，即便这段代码循环10000次、100000次，只要是一个已知的数，跟n无关，照样也是常量级的执行时间。当n无限大的时候，就可以忽略。尽管对代码的执行时间会有很大影响，但是回到时间复杂度的概念来说，它表示的是一个算法执行效率与数据规模增长的变化趋势，所以不管常量的执行时间多大，我们都可以忽略掉。因为它本身对增长趋势并没有影响。</p>
+<p>那第二段代码和第三段代码的时间复杂度是多少呢？答案是O(n)和O(n2)，你应该能容易就分析出来，我就不啰嗦了。</p>
+<p>综合这三段代码的时间复杂度，我们取其中最大的量级。所以，整段代码的时间复杂度就为O(n2)。也就是说：总的时间复杂度就等于量级最大的那段代码的时间复杂度。那我们将这个规律抽象成公式就是：</p>
+<p>如果T1(n)=O(f(n))，T2(n)=O(g(n))；那么T(n)=T1(n)+T2(n)=max(O(f(n)), O(g(n))) =O(max(f(n), g(n))).</p>
+<p>3.乘法法则：嵌套代码的复杂度等于嵌套内外代码复杂度的乘积</p>
+<p>如果T1(n)=O(f(n))，T2(n)=O(g(n))；那么T(n)=T1(n)*T2(n)=O(f(n))*O(g(n))=O(f(n)*g(n)).</p>
+<p>也就是说，假设T1(n) = O(n)，T2(n) = O(n2)，则T1(n) * T2(n) = O(n3)。落实到具体的代码上，我们可以把乘法法则看成是嵌套循环，我举个例子给你解释一下。</p>
+<pre><code class="language-java">int cal(int n) {
+   int ret = 0; 
+   int i = 1;
+   for (; i &lt; n; ++i) {
+     ret = ret + f(i);
+   } 
+ } 
+ 
+ int f(int n) {
+  int sum = 0;
+  int i = 1;
+  for (; i &lt; n; ++i) {
+    sum = sum + i;
+  } 
+  return sum;
+ }```
+我们单独看cal()函数。假设f()只是一个普通的操作，那第4～6行的时间复杂度就是，T1(n) = O(n)。但f()函数本身不是一个简单的操作，它的时间复杂度是T2(n) = O(n)，所以，整个cal()函数的时间复杂度就是，T(n) = T1(n) * T2(n) = O(n*n) = O(n2)。
+</code></pre>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://carrollwang.github.io//post/java-ji-chu-xi-ti-ji">
+                  <h3 class="post-title">
+                    Java基础习题集
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
