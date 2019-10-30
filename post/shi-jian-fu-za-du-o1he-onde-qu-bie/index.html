@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Hello World! | 我爱你啊</title>
+<title>时间复杂度O(1)和O(n)的区别 | 我爱你啊</title>
 <meta name="description" content="一生所求，爱与自由.">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -98,25 +98,35 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">Hello World!</h2>
-            <div class="post-date">2019-09-05</div>
-            
-              <div class="feature-container" style="background-image: url('https://carrollwang.github.io//post-images/hello-gridea.jpg')">
-              </div>
+            <h2 class="post-title">时间复杂度O(1)和O(n)的区别</h2>
+            <div class="post-date">2019-10-30</div>
             
             <div class="post-content">
-              <p>Hello World!</p>
+              <p>O(1)解析<br>
+O(1)就是最低的时空复杂度了，也就是耗时/耗空间与输入数据大小无关，无论输入数据增大多少倍，耗时/耗空间都不变。 哈希算法就是典型的O(1)时间复杂度，无论数据规模多大，都可以在一次计算后找到目标（不考虑冲突的话），冲突的话很麻烦的，指向的value会做二次hash到另外一快存储区域。</p>
+<p>通俗易懂的例子</p>
+<p>什么是O(1)呢，就比如你是一个酒店的管理员，你负责管理酒店的钥匙，你很聪明，你把酒店的100把钥匙放在了100个格子里面存着，并且把格子从1~100进行了编号，有一天有客人来了，酒店老板说，给我拿10号房间的钥匙给我，你迅速从10号格子里面拿出钥匙给老板，速度非常快，这时候你就是一个电脑了，老板跟你说拿几号房房间的钥匙，你只需要看一眼就能知道钥匙在哪里。</p>
+<p>O(n)解析<br>
+比如时间复杂度为O(n)，就代表数据量增大几倍，耗时也增大几倍。</p>
+<p>比如常见的遍历算法。</p>
+<p>要找到一个数组里面最大的一个数，你要把n个变量都扫描一遍，操作次数为n，那么算法复杂度是O(n).</p>
+<p>通俗易懂的例子</p>
+<p>突然，有一天，你的老板给你说，你用100个箱子存100把钥匙，太浪费空间了，你能补能把钥匙上编号一下，然后把钥匙要用绳子穿起来，这样我们可以把这个放箱子的地方再装修一个房间出来。你想了一下，是啊，现在房价这么贵，这样能多赚点钱。所以你就不能通过上面的方法来找到钥匙了，老板跟你说，给我拿45号房间的钥匙出来，你就需要从100个钥匙里面挨个找45个房间的钥匙。<br>
+————————————————<br>
+版权声明：本文为CSDN博主「孤独键客」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>
+原文链接：https://blog.csdn.net/lkp1603645756/article/details/85013126</p>
 
             </div>
             
-              <div class="tag-container">
-                
-                  <a href="https://carrollwang.github.io//tag/xZopODHAY" class="tag">
-                    Gridea
-                  </a>
-                
-              </div>
             
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://carrollwang.github.io//post/xian-xing-biao">
+                  <h3 class="post-title">
+                    线性表
+                  </h3>
+                </a>
+              </div>
             
 
             
