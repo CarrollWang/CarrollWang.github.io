@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://carrollwang.github.io/</id>
     <title>我爱你啊</title>
-    <updated>2019-11-09T14:19:37.929Z</updated>
+    <updated>2019-11-09T14:57:42.767Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://carrollwang.github.io/"/>
     <link rel="self" href="https://carrollwang.github.io//atom.xml"/>
@@ -10,6 +10,62 @@
     <logo>https://carrollwang.github.io//images/avatar.png</logo>
     <icon>https://carrollwang.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, 我爱你啊</rights>
+    <entry>
+        <title type="html"><![CDATA[牛客网算法基础班（02）]]></title>
+        <id>https://carrollwang.github.io//post/niu-ke-wang-suan-fa-ji-chu-ban-02</id>
+        <link href="https://carrollwang.github.io//post/niu-ke-wang-suan-fa-ji-chu-ban-02">
+        </link>
+        <updated>2019-11-09T14:39:26.000Z</updated>
+        <content type="html"><![CDATA[<p>一.随机快速排序<br>
+时间复杂度O(N*logN)，额外空间复杂度O(logN)</p>
+<p>二.堆排序<br>
+堆排序的细节和复杂度分析时间复杂度O(N*logN)，额外空间复杂度O(1)堆结构非常重要1，堆结构的heapInsert与heapify2，堆结构的增大和减少3，如果只是建立堆的过程，时间复杂度为O(N)4，优先级队列结构，就是堆</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[牛客网算法基础班（01）]]></title>
+        <id>https://carrollwang.github.io//post/niu-ke-wang-suan-fa-ji-chu-ban-01</id>
+        <link href="https://carrollwang.github.io//post/niu-ke-wang-suan-fa-ji-chu-ban-01">
+        </link>
+        <updated>2019-11-09T14:20:02.000Z</updated>
+        <content type="html"><![CDATA[<p>一.时间复杂度</p>
+<blockquote>
+<blockquote>
+<p>常数时间的操作：一个操作如果和数据量没有关系，每次都是固定时间内完成的操作，叫做常数操作。时间复杂度为一个算法流程中，常数操作数量的指标。常用O（读作big O）来表示。具体来说，在常数操作数量的表达式中只要高阶项，不要低阶项，也不要高阶项的系数，剩下的部分如果记为f(N)，那么时间复杂度为O(f(N))。评价一个算法流程的好坏，先看时间复杂度的指标，然后再分析不同数据样本下的实际运行时间，也就是常数项时</p>
+</blockquote>
+</blockquote>
+<p>二.冒泡排序</p>
+<p>三.选择排序</p>
+<p>四.插入排序<br>
+动图<br>
+<img src="https://carrollwang.github.io//post-images/1573309537523.gif" alt=""><br>
+直接插入算法的执行过程<br>
+<img src="https://carrollwang.github.io//post-images/1573309579191.jpg" alt=""></p>
+<p>代码：</p>
+<pre><code class="language-java">// 时间复杂度O(n^2)
+    // 控件复杂度O(1)
+    // 稳定性： 稳定
+    // 内部排序
+    for (int i = 0; i &lt; dataArr.count; i++) {
+        for (int j = i; j &gt; 0; j--) {
+            if ([dataArr[j] intValue] &lt; [dataArr[j - 1] intValue]) {
+                [dataArr exchangeObjectAtIndex:j withObjectAtIndex:j-1];
+            }
+        }
+    }
+    ```
+
+五.递归
+&gt;&gt;master公式的使用
+T(N) = a*T(N/b) + O(N^d)
+1) log(b,a) &gt; d -&gt; 复杂度为O(N^log(b,a))
+2) log(b,a) = d -&gt; 复杂度为O(N^d * logN)
+3) log(b,a) &lt; d -&gt; 复杂度为O(N^d)
+
+六.归并排序
+时间复杂度O(N*logN)，额外空间复杂度O(N）</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[时间复杂度O(1)和O(n)的区别]]></title>
         <id>https://carrollwang.github.io//post/shi-jian-fu-za-du-o1he-onde-qu-bie</id>
@@ -395,27 +451,6 @@ exit : 退出 dos 命令行<br>
 ← →：移动光标<br>
 ↑ ↓：调阅历史操作命令<br>
 Delete和Backspace：删除字符</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[参数]]></title>
-        <id>https://carrollwang.github.io//post/can-shu</id>
-        <link href="https://carrollwang.github.io//post/can-shu">
-        </link>
-        <updated>2019-10-05T05:45:31.000Z</updated>
-        <content type="html"><![CDATA[<!-- more -->
-<!-- more -->
-<p>参数🤗</p>
-<!-- more -->
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello World!]]></title>
-        <id>https://carrollwang.github.io//post/hello-gridea</id>
-        <link href="https://carrollwang.github.io//post/hello-gridea">
-        </link>
-        <updated>2019-09-04T16:00:00.000Z</updated>
-        <content type="html"><![CDATA[<p>Hello World!</p>
 ]]></content>
     </entry>
 </feed>

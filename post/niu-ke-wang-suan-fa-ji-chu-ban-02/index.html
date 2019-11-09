@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Java基础习题集 | 我爱你啊</title>
+<title>牛客网算法基础班（02） | 我爱你啊</title>
 <meta name="description" content="一生所求，爱与自由.">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -98,94 +98,31 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">Java基础习题集</h2>
-            <div class="post-date">2019-10-08</div>
+            <h2 class="post-title">牛客网算法基础班（02）</h2>
+            <div class="post-date">2019-11-09</div>
             
             <div class="post-content">
-              <p><strong>1.if语句例题1</strong></p>
-<blockquote>
-<p>岳小鹏参加Java考试，他和父亲岳不群达成承诺：<br>
-如果：<br>
-成绩为100分时，奖励一辆BMW；<br>
-成绩为(80，99]时，奖励一台iphone xs max；<br>
-当成绩为[60,80]时，奖励一个 iPad；<br>
-其它时，什么奖励也没有。<br>
-请从键盘输入岳小鹏的期末成绩，并加以判断<br>
-<strong>答案：</strong></p>
-</blockquote>
-<pre><code class="language-java">public class DoWhileTest {
-    public static void main(String[] args) {
-        //遍历100以内的偶数,并计算所有偶数的和及偶数的个数
-        int num = 1;
-        int sum = 0;
-        int count = 0;
-        do {
-            if (num % 2 == 0) {
-                System.out.println(num);
-                sum += num;
-                count++;
-            }
-            num++;
-        } while (num &lt;= 100);
-        System.out.println(&quot;总和为：&quot; + sum);
-        System.out.println(&quot;个数为：&quot; + count);
-    }
-}  
-</code></pre>
-<p><strong>if语句例题2</strong><br>
-编写程序：由键盘输入三个整数分别存入变量num1、num2、num3，<br>
-对它们进行排序(使用 if-else if-else),并且从小到大输出。</p>
-<p><strong>二维数组练习题</strong></p>
-<blockquote>
-<p>使用二维数组打印一个10行 杨辉三角。</p>
-</blockquote>
-<ul>
-<li>【提示】:</li>
-<li>1.第一行有1个元素，第n行有n个元素</li>
-<li>2.每一行的第一个元素和最后一个元素都是1</li>
-<li>3.从第三行开始，对于非第一个元素和最后一个元素的元素。即：</li>
-<li>yanghui[i][j] =yanghui[i-1][j-1] + yanghui[i-1][j];</li>
-</ul>
-<pre><code class="language-java"> public static void main(String[] args) {
-        //1.声明并初始化二维数组（动态初始化）
-        int[][] yanghui = new int[10][];
-        //2.给数组的元素赋值
-        for (int i = 0; i &lt; yanghui.length; i++) {
-            yanghui[i] = new int[i + 1];
-            //2.1给首末元素赋值
-            yanghui[i][0] = yanghui[i][i] = 1;
-            //2.2给每行的非首末元素赋值
-            if (i &gt; 1) {
-                for (int j = 1; j &lt; yanghui[i].length - 1; j++) {
-                    yanghui[i][j] = yanghui[i - 1][j - 1] + yanghui[i - 1][j];
-                }
-            }
-
-        }
-        //3.遍历二维数组
-        for (int i = 0; i &lt; yanghui.length; i++) {
-            for (int j = 0; j &lt; yanghui[i].length; j++) {
-                System.out.print(yanghui[i][j] + &quot; &quot;);
-            }
-            System.out.println();
-        }
-    }
- 
-
-
-
-
-
-</code></pre>
+              <p>一.随机快速排序<br>
+时间复杂度O(N*logN)，额外空间复杂度O(logN)</p>
+<p>二.堆排序<br>
+堆排序的细节和复杂度分析时间复杂度O(N*logN)，额外空间复杂度O(1)堆结构非常重要1，堆结构的heapInsert与heapify2，堆结构的增大和减少3，如果只是建立堆的过程，时间复杂度为O(N)4，优先级队列结构，就是堆</p>
 
             </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://carrollwang.github.io//tag/EkXpQRas6" class="tag">
+                    数据结构与算法
+                  </a>
+                
+              </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://carrollwang.github.io//post/java-ji-chu-bi-ji">
+                <a href="https://carrollwang.github.io//post/niu-ke-wang-suan-fa-ji-chu-ban-01">
                   <h3 class="post-title">
-                    Java基础笔记
+                    牛客网算法基础班（01）
                   </h3>
                 </a>
               </div>
