@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>数据结构与算法 | 我爱你啊</title>
+<title>线性表 | 我爱你啊</title>
 <meta name="description" content="一生所求，爱与自由.">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -97,63 +97,59 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="current-tag">标签: 数据结构与算法</h2>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://carrollwang.github.io//post/05-jiang-shu-zu-wei-shi-me-hen-duo-bian-cheng-yu-yan-zhong-shu-zu-du-cong-0-kai-shi-bian-hao">
-                  <h2 class="post-title">05讲数组：为什么很多编程语言中数组都从0开始编号</h2>
-                </a>
-                <div class="post-date">
-                  2019-10-28
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://carrollwang.github.io//post/04-jiang-fu-za-du-fen-xi-xia-qian-xi-zui-hao-zui-pi-ping-jun-jun-tan-shi-jian-fu-za-du">
-                  <h2 class="post-title">04讲复杂度分析（下）：浅析最好、最坏、平均、均摊时间复杂度</h2>
-                </a>
-                <div class="post-date">
-                  2019-10-27
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://carrollwang.github.io//post/shu-ju-jie-gou-yu-suan-fa">
-                  <h2 class="post-title">03讲复杂度分析（上）：如何分析、统计算法的执行效率和资源消耗</h2>
-                </a>
-                <div class="post-date">
-                  2019-10-27
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-                <a class="right" href="https://carrollwang.github.io//post/shu-ju-jie-gou-yu-suan-fa">
-                  <div class="feature-container" style="background-image: url('https://carrollwang.github.io//post-images/shu-ju-jie-gou-yu-suan-fa.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
+          <div class="post-detail">
+            <h2 class="post-title">线性表</h2>
+            <div class="post-date">2019-10-30</div>
+            
+            <div class="post-content">
+              <p>定义：另个或者多个数据元素的有限序列。<br>
+1.首先他是一序列，也就是说，元素之间是有顺序的。<br>
+2、线性表强调是有限的，元素个数是有限的。事实上，在计算机中处理的对象都是有限的，那种无限的数列，只存在于数学的概念中<br>
+3.线性表元素的个数n（n&gt;=0）定义为线性表的长度，当n=0时，称为空表。<br>
+4.相同类型的数据<br>
+5.<img src="https://carrollwang.github.io//post-images/1572439397394.png" alt=""><br>
+6.线性表的顺序存储结构，指的是用一段地址连续的存储单元一次存储线性表的数据元素。<br>
+7.<img src="https://carrollwang.github.io//post-images/1572442158486.png" alt=""><br>
+描述顺序存储结构需要三个属性：</p>
+<blockquote>
+<p>①存储空间的起始位置：数组data,它的存储位置就是存储空间的存储位置<br>
+②线性表的最大存储容量：数组长度MaxSize<br>
+③线性表的当前长度：length</p>
+</blockquote>
+<p>8.数组的长度是存放线性表的存储空间的长度，存储分配后这个量一般是不变的。<br>
+线性表的长度是线性表中数据元素的个数，随着线性表插入和删除操作的进行，这个量是变化的。<br>
+在任意时刻，线性表的长度应该小于等于数组的长度。<br>
+数组的长度：<br>
+线性表的长度：<br>
+9.<img src="https://carrollwang.github.io//post-images/1572443012065.png" alt=""><br>
+<img src="https://carrollwang.github.io//post-images/1572443020652.png" alt=""><br>
+10.<img src="https://carrollwang.github.io//post-images/1572443516001.png" alt=""><br>
+11.结点由存放数据元素的数据域和存放后继结点地址的指针域组成<br>
+12.#单链表的读取</p>
+<blockquote>
+<p>获得链表第i个数据的算法思路<br>
+a、声明一个结点p指向链表第一个结点，初始化j从1开始。<br>
+b、当j&lt;i时，就遍历链表，让p的指针向后移动，不断指向下一结点，j累加1。<br>
+c、若到链表末尾P为空，则说明第i个元素不存在。<br>
+d、否则查找成功，返回结点P的数据。</p>
+</blockquote>
 
-          <div class="pagination-container">
-  
-  
-</div>
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://carrollwang.github.io//post/05-jiang-shu-zu-wei-shi-me-hen-duo-bian-cheng-yu-yan-zhong-shu-zu-du-cong-0-kai-shi-bian-hao">
+                  <h3 class="post-title">
+                    05讲数组：为什么很多编程语言中数组都从0开始编号
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
 
         </div>
       </div>
