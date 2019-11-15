@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://carrollwang.github.io//favicon.ico?v=1573311459679">
+<link rel="shortcut icon" href="https://carrollwang.github.io//favicon.ico?v=1573810543299">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://carrollwang.github.io//styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://carrollwang.github.io/">
-        <img src="https://carrollwang.github.io//images/avatar.png?v=1573311459679" class="site-logo">
+        <img src="https://carrollwang.github.io//images/avatar.png?v=1573810543299" class="site-logo">
         <h1 class="site-title">我爱你啊</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -108,15 +108,59 @@
 <p>常数时间的操作：一个操作如果和数据量没有关系，每次都是固定时间内完成的操作，叫做常数操作。时间复杂度为一个算法流程中，常数操作数量的指标。常用O（读作big O）来表示。具体来说，在常数操作数量的表达式中只要高阶项，不要低阶项，也不要高阶项的系数，剩下的部分如果记为f(N)，那么时间复杂度为O(f(N))。评价一个算法流程的好坏，先看时间复杂度的指标，然后再分析不同数据样本下的实际运行时间，也就是常数项时</p>
 </blockquote>
 </blockquote>
-<p>二.冒泡排序</p>
-<p>三.选择排序</p>
-<p>四.插入排序<br>
-动图<br>
-<img src="https://carrollwang.github.io//post-images/1573309537523.gif" alt=""><br>
-直接插入算法的执行过程<br>
-<img src="https://carrollwang.github.io//post-images/1573309579191.jpg" alt=""></p>
-<p>代码：</p>
-<pre><code class="language-java">// 时间复杂度O(n^2)
+<p>二.冒泡排序<br>
+冒泡排序（Bubble Sort）也是一种简单直观的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。</p>
+<p>1、算法步骤<br>
+比较相邻的元素。如果第一个比第二个大，就交换他们两个。<br>
+对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。<br>
+针对所有的元素重复以上的步骤，除了最后一个。<br>
+持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</p>
+<p>2、动图演示<br>
+<img src="https://carrollwang.github.io//post-images/1573810335169.gif" alt=""><br>
+代码实现：</p>
+<pre><code class="language-java">public class BubbleSort implements IArraySort {
+    @Override
+    public int[] sort(int[] sourceArray) throws Exception {
+// 对 arr 进行拷贝，不改变参数内容
+        int[] arr = Arrays.copyOf(sourceArray, sourceArray.length);
+        for (int i = 1; i &lt; arr.length; i++) {
+// 设定一个标记，若为true，则表示此次循环没有进行交换，也就是待排序列已经有序，排序已经完成。
+            boolean flag = true;
+            for (int j = 0; j &lt; arr.length - i; j++) {
+                if (arr[j] &gt; arr[j + 1]) {
+                    int tmp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = tmp;
+
+                    flag = false;
+                }
+            }
+            if (flag) {
+                break;
+            }
+        }
+        return arr;
+    }
+}
+```java
+
+三.选择排序
+选择排序是一种简单直观的排序算法，无论什么数据进去都是 O(n²) 的时间复杂度。所以用到它的时候，数据规模越小越好。唯一的好处可能就是不占用额外的内存空间了吧。
+1、算法步骤
+首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置
+再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。
+重复第二步，直到所有元素均排序完毕。
+2、动图演示
+![](https://carrollwang.github.io//post-images/1573810464016.gif)
+四.插入排序
+动图
+![](https://carrollwang.github.io//post-images/1573309537523.gif)
+直接插入算法的执行过程
+![](https://carrollwang.github.io//post-images/1573309579191.jpg)
+
+代码：
+```java
+// 时间复杂度O(n^2)
     // 控件复杂度O(1)
     // 稳定性： 稳定
     // 内部排序
