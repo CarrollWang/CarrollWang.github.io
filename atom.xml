@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://carrollwang.github.io/</id>
     <title>我爱你啊</title>
-    <updated>2019-11-16T09:36:31.893Z</updated>
+    <updated>2019-11-16T09:37:30.869Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://carrollwang.github.io/"/>
     <link rel="self" href="https://carrollwang.github.io//atom.xml"/>
@@ -10,6 +10,71 @@
     <logo>https://carrollwang.github.io//images/avatar.png</logo>
     <icon>https://carrollwang.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, 我爱你啊</rights>
+    <entry>
+        <title type="html"><![CDATA[剑指Offer(1)二维数组中的查找]]></title>
+        <id>https://carrollwang.github.io//post/jian-zhi-offer1er-wei-shu-zu-zhong-de-cha-zhao</id>
+        <link href="https://carrollwang.github.io//post/jian-zhi-offer1er-wei-shu-zu-zhong-de-cha-zhao">
+        </link>
+        <updated>2019-11-16T07:32:05.000Z</updated>
+        <content type="html"><![CDATA[<p>题目描述:<br>
+在一个二维数组中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
+<blockquote>
+<p>1.暴力解法</p>
+</blockquote>
+<pre><code class="language-java">   public class Solution{
+   public boolean Find(int target,int arr [][] ){
+       for(int i =0 ;i &lt; arr.length ; i++){
+           for (int j = 0 ;j&lt;arr[0].length ; j++){
+               if(arr[i][j] == target){
+                   return true;
+               }
+           }
+       }
+       return false;
+   }
+}
+</code></pre>
+<blockquote>
+<blockquote>
+<p>2.左上法</p>
+</blockquote>
+</blockquote>
+<pre><code class="language-java">public class Solution {
+    public boolean Find(int target, int arr[][]) {
+        int rows = arr.length;
+        if (rows == 0) {
+            return false;
+        }
+        int cols = arr[0].length;
+        if (cols == 0) {
+            return false;
+        }
+        //col是列 row 是行；
+        int row = rows - 1;
+        int col = 0;
+        while (row &gt;= 0 &amp;&amp; col &lt;cols){
+            if (arr[row][col] &lt; target) {
+                col++;
+            } else if (arr[row][col] &gt;target) {
+                row--;
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+</code></pre>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>注意：1.为什么14行的col &lt;cols 不能写成 col &lt;= cols<br>
+答：会出现越界问题</p>
+</blockquote>
+</blockquote>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[牛客网算法基础班（04）]]></title>
         <id>https://carrollwang.github.io//post/niu-ke-wang-suan-fa-ji-chu-ban-04</id>
@@ -680,89 +745,6 @@ void print(int n) {
 六.内容小结
 复杂度也叫渐进复杂度，包括时间复杂度和空间复杂度，用来分析算法执行效率与数据规模之间的增长关系，可以粗略地表示，越高阶复杂度的算法，执行效率越低。常见的复杂度并不多，从低阶到高阶有：O(1)、O(logn)、O(n)、O(nlogn)、O(n2 )。等你学完整个专栏之后，你就会发现几乎所有的数据结构和算法的复杂度都跑不出这几个。
 ![](https://carrollwang.github.io//post-images/1572141504463.jpg)</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Java基础习题集]]></title>
-        <id>https://carrollwang.github.io//post/java-ji-chu-xi-ti-ji</id>
-        <link href="https://carrollwang.github.io//post/java-ji-chu-xi-ti-ji">
-        </link>
-        <updated>2019-10-08T07:06:54.000Z</updated>
-        <content type="html"><![CDATA[<p><strong>1.if语句例题1</strong></p>
-<blockquote>
-<p>岳小鹏参加Java考试，他和父亲岳不群达成承诺：<br>
-如果：<br>
-成绩为100分时，奖励一辆BMW；<br>
-成绩为(80，99]时，奖励一台iphone xs max；<br>
-当成绩为[60,80]时，奖励一个 iPad；<br>
-其它时，什么奖励也没有。<br>
-请从键盘输入岳小鹏的期末成绩，并加以判断<br>
-<strong>答案：</strong></p>
-</blockquote>
-<pre><code class="language-java">public class DoWhileTest {
-    public static void main(String[] args) {
-        //遍历100以内的偶数,并计算所有偶数的和及偶数的个数
-        int num = 1;
-        int sum = 0;
-        int count = 0;
-        do {
-            if (num % 2 == 0) {
-                System.out.println(num);
-                sum += num;
-                count++;
-            }
-            num++;
-        } while (num &lt;= 100);
-        System.out.println(&quot;总和为：&quot; + sum);
-        System.out.println(&quot;个数为：&quot; + count);
-    }
-}  
-</code></pre>
-<p><strong>if语句例题2</strong><br>
-编写程序：由键盘输入三个整数分别存入变量num1、num2、num3，<br>
-对它们进行排序(使用 if-else if-else),并且从小到大输出。</p>
-<p><strong>二维数组练习题</strong></p>
-<blockquote>
-<p>使用二维数组打印一个10行 杨辉三角。</p>
-</blockquote>
-<ul>
-<li>【提示】:</li>
-<li>1.第一行有1个元素，第n行有n个元素</li>
-<li>2.每一行的第一个元素和最后一个元素都是1</li>
-<li>3.从第三行开始，对于非第一个元素和最后一个元素的元素。即：</li>
-<li>yanghui[i][j] =yanghui[i-1][j-1] + yanghui[i-1][j];</li>
-</ul>
-<pre><code class="language-java"> public static void main(String[] args) {
-        //1.声明并初始化二维数组（动态初始化）
-        int[][] yanghui = new int[10][];
-        //2.给数组的元素赋值
-        for (int i = 0; i &lt; yanghui.length; i++) {
-            yanghui[i] = new int[i + 1];
-            //2.1给首末元素赋值
-            yanghui[i][0] = yanghui[i][i] = 1;
-            //2.2给每行的非首末元素赋值
-            if (i &gt; 1) {
-                for (int j = 1; j &lt; yanghui[i].length - 1; j++) {
-                    yanghui[i][j] = yanghui[i - 1][j - 1] + yanghui[i - 1][j];
-                }
-            }
-
-        }
-        //3.遍历二维数组
-        for (int i = 0; i &lt; yanghui.length; i++) {
-            for (int j = 0; j &lt; yanghui[i].length; j++) {
-                System.out.print(yanghui[i][j] + &quot; &quot;);
-            }
-            System.out.println();
-        }
-    }
- 
-
-
-
-
-
-</code></pre>
 ]]></content>
     </entry>
 </feed>
