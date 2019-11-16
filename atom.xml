@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://carrollwang.github.io/</id>
     <title>我爱你啊</title>
-    <updated>2019-11-16T09:37:30.869Z</updated>
+    <updated>2019-11-16T09:42:28.168Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://carrollwang.github.io/"/>
     <link rel="self" href="https://carrollwang.github.io//atom.xml"/>
@@ -35,10 +35,23 @@
 }
 </code></pre>
 <blockquote>
-<blockquote>
 <p>2.左上法</p>
 </blockquote>
-</blockquote>
+<ol>
+<li>分析<br>
+利用该二维数组的性质：</li>
+</ol>
+<p>每一行都按照从左到右递增的顺序排序，<br>
+每一列都按照从上到下递增的顺序排序<br>
+改变个说法，即对于左下角的值 m，m 是该行最小的数，是该列最大的数<br>
+每次将 m 和目标值 target 比较：</p>
+<p>当 m &lt; target，由于 m 已经是该行最大的元素，想要更大只有从列考虑，取值右移一位<br>
+当 m &gt; target，由于 m 已经是该列最小的元素，想要更小只有从行考虑，取值上移一位<br>
+当 m = target，找到该值，返回 true<br>
+用某行最小或某列最大与 target 比较，每次可剔除一整行或一整列<br>
+2. 复杂度<br>
+时间复杂度：O(行高 + 列宽)O(行高+列宽)<br>
+空间复杂度：O(1)O(1)</p>
 <pre><code class="language-java">public class Solution {
     public boolean Find(int target, int arr[][]) {
         int rows = arr.length;
@@ -66,11 +79,38 @@
 }
 </code></pre>
 <blockquote>
+<p>3.右上法</p>
+</blockquote>
+<pre><code class="language-java">public class Solution {
+    public boolean Find(int target, int [][] array) {
+        int rows = array.length;
+        if(rows == 0){
+            return false;
+        }
+        int cols = array[0].length;
+        if(cols == 0){
+            return false;
+        }
+        // 右上
+        int row = 0;   //注意
+        int col = cols-1;    //注意
+        while(row&lt;rows &amp;&amp; col&gt;=0){    //注意
+            if(array[row][col] &lt; target){
+                row++;        //注意
+            }else if(array[row][col] &gt; target){
+                col--;      //注意
+            }else{
+                return true;
+            }
+        }
+        return false;
+    }
+}
+</code></pre>
 <blockquote>
 <blockquote>
 <p>注意：1.为什么14行的col &lt;cols 不能写成 col &lt;= cols<br>
 答：会出现越界问题</p>
-</blockquote>
 </blockquote>
 </blockquote>
 ]]></content>
