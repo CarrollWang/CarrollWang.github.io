@@ -9,9 +9,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1574086519611">
+<link rel="shortcut icon" href="https://carrollwang.github.io//favicon.ico?v=1574086558109">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="http://localhost:4000/styles/main.css">
+<link rel="stylesheet" href="https://carrollwang.github.io//styles/main.css">
 
 
 
@@ -29,8 +29,8 @@
       <div class="sidebar" :class="{ 'full-height': menuVisible }">
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
-      <a class="site-title-container" href="http://localhost:4000">
-        <img src="http://localhost:4000/images/avatar.png?v=1574086519611" class="site-logo">
+      <a class="site-title-container" href="https://carrollwang.github.io/">
+        <img src="https://carrollwang.github.io//images/avatar.png?v=1574086558109" class="site-logo">
         <h1 class="site-title">我爱你啊</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -46,19 +46,19 @@
         
       
         
-          <a href="http://localhost:4000/tags" class="site-nav">
+          <a href="https://carrollwang.github.io//tags" class="site-nav">
             分类
           </a>
         
       
         
-          <a href="http://localhost:4000/archives" class="site-nav">
+          <a href="https://carrollwang.github.io//archives" class="site-nav">
             汇总
           </a>
         
       
         
-          <a href="http://localhost:4000/post/qi-ji-yin-qiao/" class="site-nav">
+          <a href="https://carrollwang.github.io//post/qi-ji-yin-qiao/" class="site-nav">
             奇技淫巧
           </a>
         
@@ -89,7 +89,7 @@
       一生所求，爱与自由.
     </div>
     <div class="site-footer">
-       | <a class="rss" href="http://localhost:4000/atom.xml" target="_blank">RSS</a>
+       | <a class="rss" href="https://carrollwang.github.io//atom.xml" target="_blank">RSS</a>
     </div>
   </div>
 </div>
@@ -120,39 +120,38 @@
 当 i = 3，nums[i] = 3 = i，继续下一组<br>
 当 i = 4，nums[i] = 2 != i，判断 nums[i] 等于 nums[nums[i]]，出现重复，赋值返回</p>
 <pre><code>代码：
-```java
 </code></pre>
-<p>import java.util.*;<br>
-public class Solution {<br>
-public boolean duplicate(int nums[],int length,int [] duplication) {<br>
-if(nums == null || length == 0){<br>
-return false;<br>
-}<br>
-for(int i=0;i&lt;length;i++){<br>
-while(nums[i] != i){<br>
-if(nums[i] == nums[nums[i]]){<br>
-duplication[0] = nums[i];<br>
-return true;<br>
-}<br>
-// swap<br>
-int tmp = nums[i];<br>
-nums[i] = nums[tmp];<br>
-nums[tmp] = tmp;<br>
-}<br>
-}<br>
-return false;<br>
-}<br>
-}</p>
-<pre><code>
-复杂度：
-时间复杂度：O(n)
-空间复杂度：O(1)
-
-&gt;2.排序
-分析：将输入的数组排序，判断相邻位置是否存在相同数字，如果存在，对duplication赋值返回
-代码：
-```java
-import java.util.*;
+<pre><code class="language-java">import java.util.*;
+public class Solution {
+    public boolean duplicate(int nums[],int length,int [] duplication) {
+        if(nums == null || length == 0){
+            return false;
+        }
+        for(int i=0;i&lt;length;i++){
+            while(nums[i] != i){
+                if(nums[i] == nums[nums[i]]){
+                    duplication[0] = nums[i];
+                    return true;
+                }
+                // swap
+                int tmp = nums[i];
+                nums[i] = nums[tmp];
+                nums[tmp] = tmp;
+            }
+        }
+        return false;
+    }
+}    
+</code></pre>
+<p>复杂度：<br>
+时间复杂度：O(n)<br>
+空间复杂度：O(1)</p>
+<blockquote>
+<p>2.排序<br>
+分析：将输入的数组排序，判断相邻位置是否存在相同数字，如果存在，对duplication赋值返回<br>
+代码：</p>
+</blockquote>
+<pre><code class="language-java">import java.util.*;
 public class Solution {
     public boolean duplicate(int numbers[],int length,int [] duplication) {
         if(numbers == null || length == 0){
@@ -174,7 +173,7 @@ public class Solution {
             
               <div class="tag-container">
                 
-                  <a href="http://localhost:4000/tag/36sBNcfGr" class="tag">
+                  <a href="https://carrollwang.github.io//tag/36sBNcfGr" class="tag">
                     剑指offer
                   </a>
                 
@@ -183,7 +182,7 @@ public class Solution {
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="http://localhost:4000/post/jian-zhi-offer1er-wei-shu-zu-zhong-de-cha-zhao">
+                <a href="https://carrollwang.github.io//post/jian-zhi-offer1er-wei-shu-zu-zhong-de-cha-zhao">
                   <h3 class="post-title">
                     剑指Offer(1)二维数组中的查找
                   </h3>
