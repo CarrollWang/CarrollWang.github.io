@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>剑指Offer(1)二维数组中的查找 | 我爱你啊</title>
+<title>剑指offer （2）数组中的重复数字 | 我爱你啊</title>
 <meta name="description" content="一生所求，爱与自由.">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -98,65 +98,70 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">剑指Offer(1)二维数组中的查找</h2>
-            <div class="post-date">2019-11-16</div>
+            <h2 class="post-title">剑指offer （2）数组中的重复数字</h2>
+            <div class="post-date">2019-11-17</div>
             
             <div class="post-content">
-              <p>题目描述:<br>
-在一个二维数组中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
+              <p>题目描述<br>
+在一个长度为n的数组里的所有数字都在0到n-1的范围内。 数组中某些数字是重复的，但不知道有几个数字是重复的。也不知道每个数字重复几次。请找出数组中任意一个重复的数字。 例如，如果输入长度为7的数组{2,3,1,0,2,5,3}，那么对应的输出是第一个重复的数字2。</p>
 <blockquote>
-<p>1.暴力解法</p>
+<p>1.利用特性的方法<br>
+分析：数组的长度为 n 且所有数字都在 0 到 n-1 的范围内，我们可以将每次遇到的数进行&quot;归位&quot;，当某个数发现自己的&quot;位置&quot;被相同的数占了，则出现重复。<br>
+扫描整个数组，当扫描到下标为 i 的数字时，首先比较该数字（m）是否等于 i，如果是，则接着扫描下一个数字；如果不是，则拿 m 与第 m 个数比较。如果 m 与第 m 个数相等，则说明出现重复了；如果 m 与第 m 个数不相等，则将 m 与第 m 个数交换，将 m &quot;归位&quot;，再重复比较交换的过程，直到发现重复的数</p>
 </blockquote>
-<pre><code class="language-java">   public class Solution{
-   public boolean Find(int target,int arr [][] ){
-       for(int i =0 ;i &lt; arr.length ; i++){
-           for (int j = 0 ;j&lt;arr[0].length ; j++){
-               if(arr[i][j] == target){
-                   return true;
-               }
-           }
-       }
-       return false;
-   }
-}
+<p>举个栗子：<br>
+以数组 {2,3,1,0,2,5,3} 为例<br>
+当 i = 0 时，nums[i] = 2 != i，判断 nums[i] 不等于 nums[nums[i]]，交换 nums[i] 和 nums[nums[i]]，交换后数组为：{1,3,2,0,2,5,3}<br>
+此时 i = 0，nums[i] = 1 != i，判断 nums[i] 不等于 nums[nums[i]]，交换 nums[i] 和 nums[nums[i]]，交换后数组为：{3,1,2,0,2,5,3}<br>
+此时 i = 0，nums[i] = 3 != i，判断 nums[i] 不等于 nums[nums[i]]，交换 nums[i] 和 nums[nums[i]]，交换后数组为：{0,1,2,3,2,5,3}<br>
+此时 i = 0，nums[i] = 0 = i，继续下一组<br>
+当 i = 1，nums[i] = 1 = i，继续下一组<br>
+当 i = 2，nums[i] = 2 = i，继续下一组<br>
+当 i = 3，nums[i] = 3 = i，继续下一组<br>
+当 i = 4，nums[i] = 2 != i，判断 nums[i] 等于 nums[nums[i]]，出现重复，赋值返回</p>
+<pre><code>代码：
+```java
 </code></pre>
-<blockquote>
-<p>2.左上法</p>
-</blockquote>
-<ol>
-<li>分析<br>
-利用该二维数组的性质：</li>
-</ol>
-<p>每一行都按照从左到右递增的顺序排序，<br>
-每一列都按照从上到下递增的顺序排序<br>
-改变个说法，即对于左下角的值 m，m 是该行最小的数，是该列最大的数<br>
-每次将 m 和目标值 target 比较：</p>
-<p>当 m &lt; target，由于 m 已经是该行最大的元素，想要更大只有从列考虑，取值右移一位<br>
-当 m &gt; target，由于 m 已经是该列最小的元素，想要更小只有从行考虑，取值上移一位<br>
-当 m = target，找到该值，返回 true<br>
-用某行最小或某列最大与 target 比较，每次可剔除一整行或一整列<br>
-2. 复杂度<br>
-时间复杂度：O(行高 + 列宽)O(行高+列宽)<br>
-空间复杂度：O(1)O(1)</p>
-<pre><code class="language-java">public class Solution {
-    public boolean Find(int target, int arr[][]) {
-        int rows = arr.length;
-        if (rows == 0) {
+<p>import java.util.*;<br>
+public class Solution {<br>
+public boolean duplicate(int nums[],int length,int [] duplication) {<br>
+if(nums == null || length == 0){<br>
+return false;<br>
+}<br>
+for(int i=0;i&lt;length;i++){<br>
+while(nums[i] != i){<br>
+if(nums[i] == nums[nums[i]]){<br>
+duplication[0] = nums[i];<br>
+return true;<br>
+}<br>
+// swap<br>
+int tmp = nums[i];<br>
+nums[i] = nums[tmp];<br>
+nums[tmp] = tmp;<br>
+}<br>
+}<br>
+return false;<br>
+}<br>
+}</p>
+<pre><code>
+复杂度：
+时间复杂度：O(n)
+空间复杂度：O(1)
+
+&gt;2.排序
+分析：将输入的数组排序，判断相邻位置是否存在相同数字，如果存在，对duplication赋值返回
+代码：
+```java
+import java.util.*;
+public class Solution {
+    public boolean duplicate(int numbers[],int length,int [] duplication) {
+        if(numbers == null || length == 0){
             return false;
         }
-        int cols = arr[0].length;
-        if (cols == 0) {
-            return false;
-        }
-        //col是列 row 是行；
-        int row = rows - 1;
-        int col = 0;
-        while (row &gt;= 0 &amp;&amp; col &lt;cols){
-            if (arr[row][col] &lt; target) {
-                col++;
-            } else if (arr[row][col] &gt;target) {
-                row--;
-            } else {
+        Arrays.sort(numbers);
+        for(int i=0;i&lt;length-1;i++){
+            if(numbers[i] == numbers[i+1]){
+                duplication[0] = numbers[i];
                 return true;
             }
         }
@@ -164,41 +169,6 @@
     }
 }
 </code></pre>
-<blockquote>
-<p>3.右上法</p>
-</blockquote>
-<pre><code class="language-java">public class Solution {
-    public boolean Find(int target, int [][] array) {
-        int rows = array.length;
-        if(rows == 0){
-            return false;
-        }
-        int cols = array[0].length;
-        if(cols == 0){
-            return false;
-        }
-        // 右上
-        int row = 0;   //注意
-        int col = cols-1;    //注意
-        while(row&lt;rows &amp;&amp; col&gt;=0){    //注意
-            if(array[row][col] &lt; target){
-                row++;        //注意
-            }else if(array[row][col] &gt; target){
-                col--;      //注意
-            }else{
-                return true;
-            }
-        }
-        return false;
-    }
-}
-</code></pre>
-<blockquote>
-<blockquote>
-<p>注意：1.为什么14行的col &lt;cols 不能写成 col &lt;= cols<br>
-答：会出现越界问题</p>
-</blockquote>
-</blockquote>
 
             </div>
             
@@ -213,9 +183,9 @@
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="http://localhost:4000/post/niu-ke-wang-suan-fa-ji-chu-ban-04">
+                <a href="http://localhost:4000/post/jian-zhi-offer1er-wei-shu-zu-zhong-de-cha-zhao">
                   <h3 class="post-title">
-                    牛客网算法基础班（04）
+                    剑指Offer(1)二维数组中的查找
                   </h3>
                 </a>
               </div>
